@@ -12,13 +12,14 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+
+    @ManyToOne(optional = false)
     private User user;
 
-    @OneToOne
-    @JoinColumn(name = "seat_id")
+    @ManyToOne(optional = false)
     private Seat seat;
 
     private LocalDateTime reservationTime;
+
+    private LocalDateTime expiresAt;
 }

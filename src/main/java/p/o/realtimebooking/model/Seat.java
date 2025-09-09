@@ -1,9 +1,6 @@
 package p.o.realtimebooking.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,8 +10,12 @@ public class Seat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "row_num")
     private int rowNumber;
+
+    @Column(name = "seat_num")
     private int seatNumber;
 
-    private String status = "AVAILABLE";
+    @Enumerated(EnumType.STRING)
+    private SeatStatus status = SeatStatus.AVAILABLE;
 }
