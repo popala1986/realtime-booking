@@ -1,16 +1,19 @@
--- Usunięcie tabel, jeśli istnieją
-DROP TABLE IF EXISTS reservation;
-DROP TABLE IF EXISTS seat;
-DROP TABLE IF EXISTS users;
 
--- Tworzenie tabeli users
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS reservation;
+
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS seat;
+
+
 CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    phone VARCHAR(20),          -- dodana kolumna phone
+    phone VARCHAR(20),
     enabled TINYINT DEFAULT 1,
     role VARCHAR(255) DEFAULT 'ROLE_USER'
 ) ENGINE=InnoDB;
@@ -22,7 +25,6 @@ CREATE TABLE user_roles (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- Tworzenie tabeli seat
 CREATE TABLE seat (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     row_num INT NOT NULL,
@@ -30,7 +32,6 @@ CREATE TABLE seat (
     status ENUM('AVAILABLE','OCCUPIED','RESERVED') DEFAULT 'AVAILABLE'
 ) ENGINE=InnoDB;
 
--- Tworzenie tabeli reservation
 CREATE TABLE reservation (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     user_id BIGINT NOT NULL,
