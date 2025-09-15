@@ -10,11 +10,11 @@ public class Seat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "row_num")
-    private int rowNumber;
+    @Column(name = "row_num")  // <-- tutaj mapujemy pole rowNum na kolumnę row_num w DB
+    private int rowNum;
 
-    @Column(name = "seat_num")
-    private int seatNumber;
+    @Column(name = "seat_num") // <-- mapujemy pole seatNum na kolumnę seat_num w DB
+    private int seatNum;
 
     @Enumerated(EnumType.STRING)
     private SeatStatus status = SeatStatus.AVAILABLE;

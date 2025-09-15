@@ -12,7 +12,6 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @ManyToOne(optional = false)
     private User user;
 
@@ -20,6 +19,9 @@ public class Reservation {
     private Seat seat;
 
     private LocalDateTime reservationTime;
-
     private LocalDateTime expiresAt;
+
+    public boolean isActive() {
+        return expiresAt != null && expiresAt.isAfter(LocalDateTime.now());
+    }
 }
