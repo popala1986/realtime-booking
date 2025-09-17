@@ -22,7 +22,7 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String email; // login
+    private String email;
 
     @Column(nullable = false)
     private String password;
@@ -38,7 +38,6 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Upewniamy się, że każda rola ma prefix "ROLE_"
         return roles.stream()
                 .map(role -> role.startsWith("ROLE_") ? role : "ROLE_" + role)
                 .map(SimpleGrantedAuthority::new)
