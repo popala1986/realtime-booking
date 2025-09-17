@@ -49,7 +49,7 @@ Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektow
 
 1. **Sklonuj repozytorium**  
    ```bash
-   git clone [adres-repozytorium]
+   git clone [https://github.com/popala1986/realtime-booking]
 2. **Otwórz projekt**    
     Zaimportuj projekt do swojego IDE (np. IntelliJ IDEA, Eclipse)
 3. **Konfiguracja bazy danych** 
