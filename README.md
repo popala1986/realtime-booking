@@ -45,7 +45,7 @@ Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektow
 
 ---
 
-## **Instrukcje Uruchomienia**
+## **Instrukcje uruchomienia**
 
 1. **Sklonuj repozytorium**  
    ```bash
