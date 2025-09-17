@@ -8,20 +8,11 @@ Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektow
 
 ## **Główne Funkcje**
 
-- **Rezerwacja w czasie rzeczywistym**  
-  Stan miejsc jest natychmiastowo synchronizowany między wszystkimi użytkownikami dzięki technologii WebSocket.
-
-- **System uwierzytelniania**  
-  Użytkownicy muszą być zalogowani, aby rezerwować miejsca (zastosowano Spring Security).
-
-- **Wizualizacja miejsc**  
-  Interfejs użytkownika w postaci siatki miejsc, które zmieniają kolor w zależności od ich statusu (dostępne, zarezerwowane).
-
-- **Zarządzanie rezerwacjami**  
-  Automatyczne usuwanie wygasłych rezerwacji po określonym czasie, co pozwala na zwolnienie miejsc.
-
-- **Tokeny CSRF**  
-  Zaimplementowano mechanizmy zabezpieczające przed atakami Cross-Site Request Forgery (CSRF).
+* **Rezerwacja w czasie rzeczywistym**: Stan miejsc jest natychmiastowo synchronizowany między wszystkimi użytkownikami dzięki technologii WebSocket.
+* **System uwierzytelniania**: Użytkownicy muszą być zalogowani, aby rezerwować miejsca (zastosowano Spring Security).
+* **Wizualizacja miejsc**: Interfejs użytkownika w postaci siatki miejsc, które zmieniają kolor w zależności od ich statusu (dostępne, zarezerwowane).
+* **Zarządzanie rezerwacjami**: Automatyczne usuwanie wygasłych rezerwacji po określonym czasie, co pozwala na zwolnienie miejsc.
+* **Tokeny CSRF**: Zaimplementowano mechanizmy zabezpieczające przed atakami Cross-Site Request Forgery (CSRF).
 
 ---
 
@@ -29,36 +20,39 @@ Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektow
 
 ### Backend
 
-- **Spring Boot** – Framework do tworzenia aplikacji webowych w języku Java  
-- **Spring WebSockets (STOMP)** – Protokół do komunikacji w czasie rzeczywistym  
-- **Spring Security** – Moduł do obsługi uwierzytelniania i autoryzacji  
-- **Spring Data JPA / Hibernate** – Warstwa dostępu do danych  
-- **Lombok** – Biblioteka ułatwiająca generowanie kodu  
-- **Baza danych** – MySQL 
+* **Spring Boot** - Framework do tworzenia aplikacji webowych w języku Java.
+* **Spring WebSockets (STOMP)** - Protokół do komunikacji w czasie rzeczywistym.
+* **Spring Security** - Moduł do obsługi uwierzytelniania i autoryzacji.
+* **Spring Data JPA / Hibernate** - Warstwa dostępu do danych.
+* **Lombok** - Biblioteka ułatwiająca generowanie kodu.
+* **Baza danych** - MySQL
 
 ### Frontend
 
-- **Thymeleaf** – Silnik szablonów do generowania dynamicznych stron HTML  
-- **JavaScript** – Logika po stronie klienta  
-- **jQuery** – Ułatwienie manipulacji DOM i obsługi zdarzeń  
-- **SockJS / Stomp.js** – Biblioteki do obsługi komunikacji WebSocket w przeglądarce  
+* **Thymeleaf** - Silnik szablonów do generowania dynamicznych stron HTML.
+* **JavaScript** - Logika po stronie klienta.
+* **jQuery** - Ułatwienie manipulacji DOM i obsługi zdarzeń.
+* **SockJS / Stomp.js** - Biblioteki do obsługi komunikacji WebSocket w przeglądarce.
 
 ---
 
-## **Instrukcje uruchomienia**
+## **Instrukcje Uruchomienia**
 
-1. **Sklonuj repozytorium**  
-   ```bash
-   git clone https://github.com/popala1986/realtime-booking
-2. **Otwórz projekt**    
-    Zaimportuj projekt do swojego IDE (np. IntelliJ IDEA, Eclipse)
-3. **Konfiguracja bazy danych** 
-    Konfiguracja bazy danych Upewnij się, że plik application.properties lub application.yml zawiera poprawne dane do połączenia z bazą danych
-4. **Uruchomienie** 
-    Uruchom klasę główną main() swojej aplikacji
+1.  **Sklonuj repozytorium**
+    ```bash
+    git clone [https://github.com/popala1986/realtime-booking](https://github.com/popala1986/realtime-booking)
+    ```
+2.  **Otwórz projekt**
+    Zaimportuj projekt do swojego IDE (np. IntelliJ IDEA, Eclipse).
+3.  **Konfiguracja bazy danych**
+    Upewnij się, że plik `application.properties` lub `application.yml` zawiera poprawne dane do połączenia z bazą danych.
+4.  **Uruchomienie**
+    Uruchom klasę główną `main()` swojej aplikacji.
+
+---
 
 ## **Autor**
-Paweł Opala
-- **Linkedin** – www.linkedin.com/in/paweł-opala
-- **github** – https://github.com/popala1986/realtime-booking
 
+* **Paweł Opala**
+    * **LinkedIn**: [www.linkedin.com/in/paweł-opala](www.linkedin.com/in/paweł-opala)
+    * **GitHub**: [https://github.com/popala1986/realtime-booking](https://github.com/popala1986/realtime-booking)
