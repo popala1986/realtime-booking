@@ -58,6 +58,6 @@ Uruchomienie Uruchom klasę główną main() swojej aplikacji
 
 ## **Autor**
 Paweł Opala
-- ** www.linkedin.com/in/paweł-opala
-- ** https://github.com/popala1986/realtime-booking
+- **Linkedin** – www.linkedin.com/in/paweł-opala
+- **github** https://github.com/popala1986/realtime-booking
 
