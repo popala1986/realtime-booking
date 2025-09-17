@@ -1,0 +1,211 @@
+
+<style>
+    .auth-wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(1000px 600px at 10% -10%, #e8f5e9 0, transparent 60%),
+        radial-gradient(1000px 600px at 110% 110%, #e3f2fd 0, transparent 60%),
+        #f7f7f7;
+    }
+
+    .auth-card {
+      width: min(420px, 92vw);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, .08),
+        0 2px 8px rgba(0, 0, 0, .04);
+      padding: 28px;
+      box-sizing: border-box;
+    }
+
+    .auth-header {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .auth-header h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #2e2e2e;
+      letter-spacing: .2px;
+    }
+    .auth-header p {
+      margin: 6px 0 0;
+      color: #6a6a6a;
+      font-size: 13px;
+    }
+
+    .alert {
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+      margin: 12px 0;
+    }
+    .alert.error {
+      background: #ffebee;
+      color: #b71c1c;
+      border: 1px solid #ffcdd2;
+    }
+    .alert.info {
+      background: #e8f5e9;
+      color: #1b5e20;
+      border: 1px solid #c8e6c9;
+    }
+
+    .form-group {
+      margin: 14px 0;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 6px;
+      color: #444;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      border: 1px solid #d9d9d9;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    .input:hover {
+      border-color: #bdbdbd;
+    }
+    .input:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 4px rgba(76, 175, 80, .12);
+    }
+
+    .toggle-pass {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 28px;
+      padding: 0 8px;
+      border: none;
+      background: transparent;
+      color: #666;
+      font-size: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .toggle-pass:hover { background: #f1f1f1; }
+
+    .actions {
+      margin-top: 18px;
+    }
+    .btn-primary {
+      width: 100%;
+      height: 44px;
+      border: none;
+      border-radius: 10px;
+      background: #4CAF50;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: .2px;
+      cursor: pointer;
+      box-shadow: 0 2px 0 rgba(0,0,0,.08);
+      transition: transform .05s ease, background .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { background: #43a047; box-shadow: 0 4px 12px rgba(0,0,0,.10); }
+    .btn-primary:active { transform: translateY(1px); }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+    }
+    .meta a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+    .meta a:hover { text-decoration: underline; }
+
+    @media (max-width: 420px) {
+      .auth-card { padding: 22px; }
+    }
+</style>
+
+<div class="auth-wrap">
+    <form th:action="@{/login}" method="post" class="auth-card" novalidate>
+        <!-- CSRF -->
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+        <div class="auth-header">
+            <h1>Logowanie</h1>
+            <p>Wpisz dane, aby kontynuować</p>
+        </div>
+
+        <!-- Komunikaty -->
+        <div th:if="${param.error}" class="alert error">
+            Nieprawidłowy email lub hasło
+        </div>
+        <div th:if="${param.logout}" class="alert info">
+            Zostałeś wylogowany
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-wrap">
+                <input type="email" id="email" name="email" class="input" placeholder="Wpisz email"
+                       th:value="${param.email}" autocomplete="username" required>
+            </div>
+        </div>
+
+        <!-- Hasło -->
+        <div class="form-group">
+            <label for="password" class="form-label">Hasło</label>
+            <div class="input-wrap">
+                <input type="password" id="password" name="password" class="input" placeholder="Wpisz hasło"
+                       autocomplete="current-password" required>
+                <button type="button" class="toggle-pass" aria-controls="password" aria-label="Pokaż/ukryj hasło">
+                    Pokaż
+                </button>
+            </div>
+        </div>
+
+        <!-- Akcje -->
+        <div class="actions">
+            <button type="submit" class="btn-primary">Zaloguj się</button>
+            <div class="meta">
+                <span></span>
+                <a href="/login" th:href="@{/login}">Zapomniałeś hasła?</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Pokaż/ukryj hasło
+    (function () {
+      const btn = document.querySelector('.toggle-pass');
+      const input = document.getElementById('password');
+      if (!btn || !input) return;
+
+      btn.addEventListener('click', () => {
+        const isPwd = input.getAttribute('type') === 'password';
+        input.setAttribute('type', isPwd ? 'text' : 'password');
+        btn.textContent = isPwd ? 'Ukryj' : 'Pokaż';
+        input.focus();
+      });
+    })();
+</script>
