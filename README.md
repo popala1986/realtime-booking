@@ -56,8 +56,8 @@ Konfiguracja bazy danych Upewnij się, że plik application.properties lub appli
 
 Uruchomienie Uruchom klasę główną main() swojej aplikacji
 
-Autor
+## **Autor**
 Paweł Opala
-www.linkedin.com/in/paweł-opala
-https://github.com/popala1986/realtime-booking
+- ** www.linkedin.com/in/paweł-opala
+- ** https://github.com/popala1986/realtime-booking
 
