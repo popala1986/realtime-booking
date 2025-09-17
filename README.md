@@ -34,7 +34,7 @@ Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektow
 - **Spring Security** – Moduł do obsługi uwierzytelniania i autoryzacji  
 - **Spring Data JPA / Hibernate** – Warstwa dostępu do danych  
 - **Lombok** – Biblioteka ułatwiająca generowanie kodu  
-- **Baza danych** – _[np. H2, PostgreSQL]_  
+- **Baza danych** – MySQL 
 
 ### Frontend
 
