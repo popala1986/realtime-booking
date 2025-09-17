@@ -50,11 +50,12 @@ Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektow
 1. **Sklonuj repozytorium**  
    ```bash
    git clone [adres-repozytorium]
-Otwórz projekt Zaimportuj projekt do swojego IDE (np. IntelliJ IDEA, Eclipse)
-
-Konfiguracja bazy danych Upewnij się, że plik application.properties lub application.yml zawiera poprawne dane do połączenia z bazą danych
-
-Uruchomienie Uruchom klasę główną main() swojej aplikacji
+2. **Otwórz projekt**    
+    Zaimportuj projekt do swojego IDE (np. IntelliJ IDEA, Eclipse)
+3. **Konfiguracja bazy danych** 
+    Konfiguracja bazy danych Upewnij się, że plik application.properties lub application.yml zawiera poprawne dane do połączenia z bazą danych
+4. **Uruchomienie** 
+    Uruchom klasę główną main() swojej aplikacji
 
 ## **Autor**
 Paweł Opala
