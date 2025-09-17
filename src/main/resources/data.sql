@@ -1,6 +1,3 @@
--- Dodanie użytkownika testowego
-INSERT INTO users (email, password, first_name, last_name, enabled, role)
-VALUES ('test@example.com', '$2a$10$7Q7gqV1/JZVq8l5Y1Qx9VeEphmDkZV8o9f4KfJ0Y6q5nRj1d0tV4a', 'Test', 'User', 1, 'ROLE_USER');
 
 -- Dodanie miejsc
 INSERT INTO seat (row_num, seat_num, status) VALUES
