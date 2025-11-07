@@ -1,58 +1,51 @@
-# **Real-Time Seat Booking Application**
+🌐 Real-Time Seat Booking Application
+📌 Project Description
+This is a web application for real-time seat booking, designed using Spring Boot and WebSockets (STOMP). It simulates a cinema or theater reservation system, allowing multiple users to book seats simultaneously. The main goal of the project is to demonstrate effective real-time communication and state synchronization between multiple clients.
 
-## **Opis Projektu**
+🚀 Main Features
+Real-time booking: Instant seat status updates across all users via WebSocket.
 
-Jest to aplikacja webowa do rezerwacji miejsc w czasie rzeczywistym, zaprojektowana z wykorzystaniem technologii **Spring Boot** i **WebSockets (STOMP)**. Aplikacja symuluje system rezerwacji kinowej lub teatralnej, umożliwiając wielu użytkownikom jednoczesne rezerwowanie miejsc. Główne założenie projektu to demonstracja efektywnej komunikacji w czasie rzeczywistym i synchronizacji stanu aplikacji między wieloma klientami.
+Authentication system: Users must log in to book seats (powered by Spring Security).
 
----
+Seat visualization: Interactive seat grid with dynamic color changes based on status (available, reserved).
 
-## **Główne Funkcje**
+Reservation management: Automatic expiration of reservations after a set time to free up seats.
 
-* **Rezerwacja w czasie rzeczywistym**: Stan miejsc jest natychmiastowo synchronizowany między wszystkimi użytkownikami dzięki technologii WebSocket.
-* **System uwierzytelniania**: Użytkownicy muszą być zalogowani, aby rezerwować miejsca (zastosowano Spring Security).
-* **Wizualizacja miejsc**: Interfejs użytkownika w postaci siatki miejsc, które zmieniają kolor w zależności od ich statusu (dostępne, zarezerwowane).
-* **Zarządzanie rezerwacjami**: Automatyczne usuwanie wygasłych rezerwacji po określonym czasie, co pozwala na zwolnienie miejsc.
-* **Tokeny CSRF**: Zaimplementowano mechanizmy zabezpieczające przed atakami Cross-Site Request Forgery (CSRF).
+CSRF protection: Security mechanisms against Cross-Site Request Forgery attacks.
 
----
+🛠️ Technologies Used
+🔧 Backend
+Spring Boot – Java framework for building web applications.
 
-## **Użyte Technologie**
+Spring WebSockets (STOMP) – Real-time communication protocol.
 
-### Backend
+Spring Security – Authentication and authorization module.
 
-* **Spring Boot** - Framework do tworzenia aplikacji webowych w języku Java.
-* **Spring WebSockets (STOMP)** - Protokół do komunikacji w czasie rzeczywistym.
-* **Spring Security** - Moduł do obsługi uwierzytelniania i autoryzacji.
-* **Spring Data JPA / Hibernate** - Warstwa dostępu do danych.
-* **Lombok** - Biblioteka ułatwiająca generowanie kodu.
-* **Baza danych** - MySQL
+Spring Data JPA / Hibernate – Data access layer.
 
-### Frontend
+Lombok – Code generation helper.
 
-* **Thymeleaf** - Silnik szablonów do generowania dynamicznych stron HTML.
-* **JavaScript** - Logika po stronie klienta.
-* **jQuery** - Ułatwienie manipulacji DOM i obsługi zdarzeń.
-* **SockJS / Stomp.js** - Biblioteki do obsługi komunikacji WebSocket w przeglądarce.
+MySQL – Relational database.
 
----
+🎨 Frontend
+Thymeleaf – Template engine for dynamic HTML rendering.
 
-## **Instrukcje Uruchomienia**
+JavaScript – Client-side logic.
 
-1.  **Sklonuj repozytorium**
-    ```bash
-    git clone https://github.com/popala1986/realtime-booking
-    ```
-2.  **Otwórz projekt**
-    Zaimportuj projekt do swojego IDE (np. IntelliJ IDEA, Eclipse).
-3.  **Konfiguracja bazy danych**
-    Upewnij się, że plik `application.properties` lub `application.yml` zawiera poprawne dane do połączenia z bazą danych.
-4.  **Uruchomienie**
-    Uruchom klasę główną `main()` swojej aplikacji.
+jQuery – Simplified DOM manipulation and event handling.
 
----
+SockJS / Stomp.js – WebSocket communication libraries for the browser.
 
-## **Autor**
+📦 How to Run
+Clone the repository
 
-* **Paweł Opala**
-    * **LinkedIn**: [www.linkedin.com/in/paweł-opala](www.linkedin.com/in/paweł-opala)
-    * **GitHub**: [https://github.com/popala1986/realtime-booking](https://github.com/popala1986/realtime-booking)
+bash
+git clone https://github.com/popala1986/realtime-booking
+Open the project Import into your IDE (e.g., IntelliJ IDEA, Eclipse).
+
+Configure the database Ensure application.properties or application.yml contains correct database credentials.
+
+Run the application Launch the main class with the main() method.
+
+👤 Author
+Paweł Opala
